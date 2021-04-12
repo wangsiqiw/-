@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../vue/vue.js"></script>
+    <style>
+        .box {
+            border: 1px dashed #f0f;
+        }
+        
+        .textColor {
+            color: #f00;
+            background-color: #eef;
+        }
+        
+        .textSize {
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="box" :class="[classA, classB]">
+        <li>学习Vue</li>
+        <li>学习Node</li>
+        <li>学习React</li>
+    </ul>
+    <script>
+        var vm = new Vue({
+            el: '.box',
+            data: {
+                classA: "textColor ",
+                classB: "textSize "
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>

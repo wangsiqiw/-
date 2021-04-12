@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../vue/vue.js"></script>
+</head>
+
+<body>
+    <style>
+        .box {
+            border: 1px dashed #f0f;
+        }
+        
+        .textColor {
+            color: #f00;
+            background-color: #eef;
+        }
+        
+        .textSize {
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
+    <!-- 
+        HTML最终渲染为 <ul class="box textColor textSize"></ul>
+        注意：
+            textColor，textSize  对应的渲染到页面上的CSS类名	
+            isColor，isSize  对应vue data中的数据  如果为true 则对应的类名 渲染到页面上 
+            当 isColor 和 isSize 变化时，class列表将相应的更新，
+            例如，将isSize改成false，
+            class列表将变为 <ul class="box textColor"></ul>
+    -->
+    <ul class="box" v-bind:class="{textColor:isColor, textSize:isSize}">
+        <li>学习Vue</li>
+        <li>学习Node</li>
+        <li>学习React</li>
+    </ul>
+
+    <script>
+        var vm = new Vue({
+            el: '.box',
+            data: {
+                isColor: true,
+                isSize: true,
+            }
+        })
+    </script>
+</body>
+
+</html>

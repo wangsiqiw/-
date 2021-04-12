@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../vue/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <span v-if="flag">
+            如果flag为true则显示,false不显示!
+         </span>
+        <div v-if="type === 'A'">
+            A
+        </div>
+        <!-- v-else-if紧跟在v-if或v-else-if之后   表示v-if条件不成立时执行-->
+        <div v-else-if="type === 'B'">
+            B
+        </div>
+        <div v-else-if="type === 'C'">
+            C
+        </div>
+        <!-- v-else紧跟在v-if或v-else-if之后-->
+        <div v-else>
+            Not A/B/C
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                type: 'C',
+                flag: false
+            }
+        })
+    </script>
+</body>
+
+</html>

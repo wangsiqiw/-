@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../vue/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!--预先定义了keycode 116（即F5）的别名为f5，因此在文字输入框中按下F5，会触发prompt方法-->
+        <input type="text" v-on:keydown.f5="prompt()">
+    </div>
+
+    <script>
+        Vue.config.keyCodes.f5 = 13;
+
+        let app = new Vue({
+            el: '#app',
+            methods: {
+                prompt: function() {
+                    alert('我是 enter');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
