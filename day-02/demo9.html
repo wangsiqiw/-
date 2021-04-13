@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<div id="app">
+    <button v-on:click="fn()">+</button>
+    <span>{{sapn}}</span>
+    <button v-on:click="fn()">-</button>
+</div>
+
+
+<body>
+    <script>
+        // 控制 数字 + -：要求在两个按钮上绑定一个事件（ 用两种方式实现， 1 方法传参数 2 使用event）
+        new Vue({
+            el: " #app ",
+            data: {
+                sapn: 1
+            },
+            methods: {
+                fn() {
+                    if (event.path[0].innerHTML == "+") {
+                        this.sapn++
+                    }
+                    if (event.path[0].innerHTML == "-" && this.sapn > 1) {
+                        this.sapn--
+                    }
+
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
