@@ -6,11 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../vue/vue.js"></script>
 </head>
 
 <body>
-
+    <div id="app">
+        <div v-html="html"></div>
+        <p v-pre>{{html}}</p>
+        <div>{{ckb==true?"勾选了":"没有勾选"}}</div>
+        <input type="checkbox" v-model="ckb">
+        <button v-on:click="fn()">按钮</button>
+        <h3>{{h3}}</h3>
+        <input type="radio" value="男" v-model="h3">
+        <input type="button" name="" id="" value="" v-on:onclick="fn()">
+        <input type="radio" value="女" v-model="h3">
+    </div>
 </body>
-<script></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            html: "<sapn></sapn>",
+            ckb: true,
+            h3: "<span>",
+            h4: ""
+        },
+        methods: {
+            fn() {
+                console.log(this.html)
+            }
+        },
+    })
+</script>
 
 </html>

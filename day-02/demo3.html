@@ -6,10 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../vue/vue.js"></script>
 </head>
 
 <body>
-
+    <div id="app">
+        <button @click="fn(1,$event)">按钮</button>
+        <input type="button" value="按钮" @click="fn($event,1)">
+    </div>
 </body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            ele: 1
+        },
+        methods: {
+            fn(e, ev) {
+                console.log(e, ev);
+            }
+        },
+    })
+</script>
 
 </html>
