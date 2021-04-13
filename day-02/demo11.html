@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" oninput="fn()">
+    <span></span>
+</body>
+<script>
+    var obj = {}   
+    var bValue = 0
+    Object.defineProperty(obj,  'name',   { //给对象添加属性并进行相关操作
+        get()  { //Get：指读取属性时调用的函数。
+            return  bValue;            
+        },
+        set(newValue)  { //Set：指写入属性时调用的函数。newValue传进的实际参数             
+            bValue  =  newValue //重新赋值                
+        },
+               
+
+    })
+
+    var sapn = document.querySelector("span")
+    console.log(obj.name);
+
+    function fn() {
+        var newValue = document.querySelector("input").value  
+        obj.name = newValue
+        console.log(obj.name); 
+        console.log(newValue); 
+        sapn.innerHTML = obj.name
+    }
+</script>
+
+</html>
