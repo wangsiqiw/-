@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue/vue.js"></script>
+    <style>
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(item, index) in arr" :key="index" v-show="item.jieq>100">
+                <p>{{item.title}}</p>
+                <p>{{item.jieq}}</p>{
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app ",
+        data: {
+            arr: [{
+                title: "衣服",
+                jieq: "1020"
+            }, {
+                title: "裤子",
+                jieq: "1200"
+            }, {
+                title: "衣服",
+                jieq: "100"
+            }, ]
+        }
+    })
+</script>
+
+</html>

@@ -53,6 +53,8 @@
         <div id="sss ">
             <h1>{{app}}</h1>
         </div>
+        <div :class="[classa]">你好</div>
+        <div :style="green"></div>
     </div>
 </body>
 <script>
@@ -60,8 +62,13 @@
     new Vue({
         el: " #app ",
         data: {
+            green: {
+
+                color: "green"
+            },
             app: " ",
-            index: 0
+            index: 0,
+            classa: "textColor"
         },
         methods: {
             fn() {
@@ -71,6 +78,7 @@
 
             }
         },
+
     })
 </script>
 
