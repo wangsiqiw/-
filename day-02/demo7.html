@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<style>
+    ul {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    li {
+        list-style: none;
+        color: blueviolet;
+    }
+    
+    .class {
+        background: yellow;
+    }
+    
+    .textColor {
+        color: yellow;
+    }
+    
+    #sss {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        color: yellow;
+        background: blueviolet;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <!-- v-on:click="fn()" -->
+        <ul>
+            <li v-on:click="fn(0,$event)" v-bind:class="{textColor:index==0}">bootstrap</li>
+            <li v-on:click="fn(1,$event)" v-bind:class="{textColor:index==1}">起步</li>
+            <li v-on:click="fn(2,$event)" v-bind:class="{textColor:index==2}">全局</li>
+            <li v-on:click="fn(3,$event)" v-bind:class="{textColor:index==3}">组件</li>
+            <li v-on:click="fn(4,$event)" v-bind:class="{textColor:index==4}">javascript</li>
+            <li v-on:click="fn(5,$event)" v-bind:class="{textColor:index==5}">定制</li>
+            <li v-on:click="fn(6,$event)" v-bind:class="{textColor:index==6}">网络实力</li>
+            <li v-on:click="fn(7,$event)" v-bind:class="{textColor:index==7}">jekyll</li>
+        </ul>
+        <div id="sss">
+            <h1>{{app}}</h1>
+        </div>
+    </div>
+</body>
+<script>
+    var innerHTML
+    new Vue({
+        el: " #app ",
+        data: {
+            app: "",
+            index: 0
+        },
+        methods: {
+            fn(index, e) {
+                this.index = index
+                this.app = e.target.innerHTML
+                    // console.log(event.path[0].innerHTML);
+                    // this.app = event.path[0].innerHTML
+            }
+        },
+    })
+</script>
+
+</html>

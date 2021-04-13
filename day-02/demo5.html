@@ -11,16 +11,18 @@
 
 <body>
     <div id="app">
-        <div @click="clik1">1
-            <div @click.self="clik2">2
-                <div @click="clik3">3</div>
-            </div>
-        </div>
+        <img v-bind:src="ser" alt="">
+        <img :src="ser" alt="">
+        <input v-on:keyup.65="submit">
+        <input v-on:keyup.enter="submit" value="">
     </div>
 </body>
 <script>
     new Vue({
         el: "#app",
+        data: {
+            ser: "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png"
+        },
         methods: {
             clik1() {
                 alert('1');
@@ -30,6 +32,9 @@
             },
             clik3() {
                 alert('3');
+            },
+            submit() {
+                console.log(event.keyCode);
             }
         },
     })

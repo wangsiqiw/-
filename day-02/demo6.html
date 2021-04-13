@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<style>
+    .div {
+        background: blue;
+        color: red;
+        list-style: none;
+        width: 100px;
+        height: 200px;
+    }
+    
+    .div li {
+        color: yellow;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-on:click="fn(1)" v-bind:class="{div:index==1}">1</li>
+            <li v-on:click="fn(2)" v-bind:class="{div:index==2}">2</li>
+            <li v-on:click="fn(3)" v-bind:class="{div:index==3}">3</li>
+        </ul>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            index: "1",
+            ser: "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png"
+        },
+        methods: {
+
+            submit() {
+                console.log(event.keyCode);
+            },
+            fn(index) {
+                this.index = index
+            }
+        },
+    })
+</script>
+
+</html>
