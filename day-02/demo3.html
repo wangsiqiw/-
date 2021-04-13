@@ -12,7 +12,7 @@
 <body>
     <div id="app">
         <button @click="fn(1,$event)">按钮</button>
-        <input type="button" value="按钮" @click="fn($event,1)">
+        <input type="button" value="按钮" @click="fl">
     </div>
 </body>
 <script>
@@ -24,6 +24,9 @@
         methods: {
             fn(e, ev) {
                 console.log(e, ev);
+            },
+            fl() {
+                console.log(event);
             }
         },
     })
