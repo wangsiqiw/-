@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 生产环境版本，优化了尺寸和速度 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="../vue/vue.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <style>
+        li {
+            list-style: none;
+        }
+        
+        .nav {
+            width: 100px;
+            background: pink;
+        }
+        
+        div.box {
+            overflow: hidden;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <li v-for="(item, index) in items" :key="index" :class="{nav:se==index}" v-on:click="fn(index)">
+            <p>{{item.title}}</p>
+            <p>{{item.id}}</p>
+        </li>
+        <div>
+            <img :src="src" alt="">
+        </div>
+        <div>
+            <img :src="items[se].path" alt="">
+        </div>
+    </div>
+    <el-switch v-model="value" active-color="#13ce66" inactive-color="#ff4949">
+    </el-switch>
+
+    <script>
+        export default {
+            data() {
+                return {
+                    value: true
+                }
+            }
+        };
+    </script>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            items: [{
+                id: 1,
+                title: 'apple',
+                path: 'https://img0.baidu.com/it/u=4284571038,3834103798&fm=15&fmt=auto&gp=0.jpg'
+            }, {
+                id: 2,
+                title: 'orange',
+                path: 'https://img2.baidu.com/it/u=3771148078,1108759328&fm=15&fmt=auto&gp=0.jpg'
+            }, {
+                id: 3,
+                title: 'lemon',
+                path: 'https://img0.baidu.com/it/u=2599174115,706065766&fm=26&fmt=auto&gp=0.jpg'
+            }],
+            se: 0,
+            src: "https://img0.baidu.com/it/u=4284571038,3834103798&fm=15&fmt=auto&gp=0.jpg"
+        },
+
+        methods: {
+            fn(index) {
+                this.se = index
+                this.src = this.items[index].path
+            }
+        },
+
+    })
+</script>
+
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <!-- 生产环境版本，优化了尺寸和速度 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="../vue/vue小测试.js"></script>
+    <style>
+        #div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<div id="app">
+
+    <input type="checkbox" v-demo="true" if="condition">
+    <ul v-float="'left'">
+
+    </ul>
+    <div v-dragging="true" id="div">
+        你好
+    </div>
+</div>
+
+<body>
+    <script>
+        Vue.directive("dragging", {
+            bind: function(ele, val) {
+                if (val.value) {
+
+                    ele.onmousedown = function() {
+                        ele.onmousemove = function(event) {
+                            console.log(event);
+                            ele.style.marginLeft = event.clientX - ele.offsetWidth / 2 + "px"
+                            ele.style.marginTop = event.clientY - ele.offsetHeight / 2 + "px"
+                        }
+                        ele.onmouseup = function() {
+                            ele.onmousemove = null
+                        }
+                    }
+                }
+            }
+        })
+        Vue.directive("demo", {
+            inserted: function(el) {
+                console.log(el);
+            },
+            bind: function(el, val) {
+                console.log(el, val.value);
+                el.checked = val.value
+
+                // onmousedown
+                // onmousemove
+                // onmouseup
+            }
+        })
+        Vue.directive("float", {
+            bind: function(el, val) {
+                console.log(el, val.value);
+                console.log(el.children);
+                for (var i = 0; i < el.children.length; i++) {
+                    console.log(el.children[i]);
+                    el.children[i].style.float = val.value
+                }
+            }
+        })
+        new Vue({
+            el: "#app ",
+            data: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="../vue/vue小测试.js"></script> -->
+    <script src="../vue/vue.js"></script>
+</head>
+<style>
+    #div {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <div v-dragging="true" id="div">
+            你好
+        </div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app ",
+        data: {},
+
+        modules: {
+
+        },
+        directives: {
+            dragging: {
+                inserted: function(el) {
+                    console.log(el);
+                },
+                bind(ele, val) {
+                    if (val.value) {
+                        ele.onmousedown = function() {
+                            ele.onmousemove = function(event) {
+                                console.log(event);
+                                ele.style.marginLeft = event.clientX - ele.offsetWidth / 2 + "px "
+                                ele.style.marginTop = event.clientY - ele.offsetHeight / 2 + "px "
+                            }
+                            ele.onmouseup = function() {
+                                ele.onmousemove = null
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    })
+</script>
+
+</html>
