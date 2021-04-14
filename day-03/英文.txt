@@ -1,0 +1,161 @@
+1.     @media screen and (max-width:900px){}
+1.  onlick 当点击的时候
+1.  onmouseover 鼠标移入
+1.  onmouseout 鼠标移出
+1.  onblur：失去焦点事件
+1.  onkeydown：键盘按下事件（前）
+1.  onkeypress：键盘按下事件（后）
+1.  onload：当页面加载完成之后触发
+1.  onchange;内容改变事件
+1.  onkeydown;键盘按下事件（前）
+1.  onkeyup;键盘松开事件
+1.  onkeypress;键盘按下事件（后）
+1.  onmouseout：鼠标移出事件
+1.  onmouseover：鼠标移入事件
+1.  onselect：内容被选中事件
+1.  ondblclick：鼠标双击事件
+1.  onfocus：获得焦点事件
+1.  onkeyup：键盘松开事件
+1. clearTimeout 清除延迟定时器
+1. clearInterval 清除间隔定时器
+1. String.fromCharCode(编码) 
+1. 输入编码查找对应的字符
+1. window.history.back 返回历史记录 退
+1. XMLHttpRequest（）
+1. 2. \d 数字 [0-9]
+1. \w 数字、英文、下划线 [0-9a-z]
+1. \s 空白字符 所有的空白字符
+1. . 代表任意字符
+1. \D 非数字 [^0-9]
+1. \W 非数字、英文、下划线 [^0-9a-z]
+1. \S 非空白字符
+1. \u4e00-\u9fa5 中文
+1. 量词
+1. {n} n个
+1. {n,m} n-m个
+1. {n,} 最少n个，最多随便
+1. {0，m} 最少随便 最多m个
+1.  
+1. {1，} 就是 若干个
+1. {0，} 任意个 可以没有
+1. ？ {0,1} 最少没有 最多1个
+1. \ 转译特殊字符
+1.  
+1. | 或的意思
+1. i 忽略大小写
+1. g 全局匹配
+1. m 多行模式
+1.  
+1. ^ 行首 如果在方括号里面是除了
+1. $ 行尾
+1. 2. 
+1. slice：返回指定数组
+1. 方式三：
+1. addEventListener('参数一','参数二'，‘参数三’）
+1. 参数一：事件名称（不带on)
+1. 参数二：函数，或者函数名称
+1. 参数三：控制事件 冒泡 或事件捕获
+1. 移除事件：
+1. removeEventListener('参数一'，‘参数二’）
+1. 参数一：事件名称
+1. 参数二：函数名称
+1. 控制事件冒泡和捕获
+1.  ele.addEventListenere('click',clk3,true) true是事件捕获
+1. ele.addEventListenere('click',clk3,false) 默认值事件冒泡
+1. 阻止事件冒泡和捕获 
+1. 非Ie:event.stopPropagation()
+1. ie:event.cancelBubble()
+1. 阻止默认事件
+1. event.preventDefault()
+1. event.returnValue()  ie:678
+1. DOMContentLoaded:仅当DOM（标签）加载完成，不包括样式表，图片
+1. location跳转
+1. replace（）：替换当前页面 不能后退
+1. reload（）：刷新当前的页面 但是不会提交post请求
+1. protocol：协议 http  https tcp
+1. host:主机名称（域名）origin：
+1. 完整域名 如http://xxx.com
+1. 数组去重复  indexOf
+1. 	 var arr = ['2','s','l','m','n','s','l'];
+1.         var arrNew = [];
+1.         for(var i =0;i<arr.length;i++){
+1.             if(arrNew.indexOf(arr[i])==-1){  //arrNew数组中没有 arr[i]
+1.                 arrNew.push(arr[i]);
+1.             }
+1.         }
+1. join('-')把数组拼接成字符串
+1. shift()在数组头部去掉一个元素
+1. reverse（）数组翻转
+1. silce(0,2)截取(复制)数组//截取0-1 含头不含尾
+1. （从哪里开始截取，截取到哪里）
+1. splice(3,1)  删除指定元素  直接修改原数组
+1. （从哪里开始删除的下标，删除几个）
+1. indexOf()在数组中查找元素
+1. 操 作 方 法
+1. 	操作一 淡入淡出
+1. 		fadeOut() //让他隐藏掉
+1. 		fadeToggle
+1. 		fadeIn//显示
+1. 	操作二 上下滑动
+1. 		slideDown
+1. 		slideUp
+1. 		slideToggle
+1. 	操作三 
+1. 		addclass()
+1. 		removeclass()
+1. 		toggleclass()
+1. 	animate({属性名:属性值},运动时间)
+1. 	hover鼠标移入和移除都会触发配合toogle()
+1. 自由主题
+1. 2. 自定义修饰符 Vue.config.keyCodes.f5 = 116;
+1. success
+1. mvc : model  view  Controller(控制器 负责逻辑的处理)
+1. m v vm: model 数据   view 视图   viewModel 视图和数据的双向数据绑定
+1. mvp :model  view  presenter 负责逻辑的处理
+1. 
+1. async、await
+1. 异步编程的最高境界就是不关心它是否是异步。async、await很好的解决了这一点，将异步强行转换为同步处理。async/await与promise不存在谁代替谁的说法，因为async/await是寄生于Promise，是Generater的语法糖。
+1. 
+1. 用法
+1. async用于申明一个function是异步的，而await可以认为是async wait的简写，等待一个异步方法执行完成。规则：
+1. 1 async和await是配对使用的，await存在于async的内部。否则会报错
+1. 2 await表示在这里等待一个promise返回，再接下来执行
+1. 3 await后面跟着的应该是一个promise对象，（也可以不是，如果不是接下来也没什么意义了…）
+1. promise是ES6，async/await是ES7
+1. promise是ES6，async/await是ES7
+1. async/await相对于promise来讲，写法更加优雅
+1. reject状态：
+1. promise错误可以通过catch来捕捉，建议尾部捕获错误，
+1. async/await既可以用.then又可以用try-catch捕捉
+1. 
+1. 写法：
+> async、await
+> 异步编程的最高境界就是不关心它是否是异步。async、await很好的解决了这一点，将异步强行转换为同步处理。async/await与promise不存在谁代替谁的说法，因为async/await是寄生于Promise，是Generater的语法糖。
+> 用法
+> async用于申明一个function是异步的，而await可以认为是async wait的简写，等待一个异步方法执行完成。规则：
+> 1 async和await是配对使用的，await存在于async的内部。否则会报错
+> 2 await表示在这里等待一个promise返回，再接下来执行
+> 3 await后面跟着的应该是一个promise对象，（也可以不是，如果不是接下来也没什么意义了…）
+> 
+> 写法：
+> 
+> async function demo() {
+>  let result01 = await sleep(100);
+>  //上一个await执行之后才会执行下一句
+>  let result02 = await sleep(result01 + 100);
+>  let result03 = await sleep(result02 + 100);
+>  // console.log(result03);
+>   return result03;
+> }
+> 3.HTML5 拖放
+> 
+>  拖放是一种常见的特性，即抓取对象以后拖到另一个位置。在 HTML5 
+> 首先，为了使元素可拖动，把 draggable 属性设置为 true ：
+> 
+> <img draggable="true">
+> 5 Web Workers
+> 主线程调用worker.postMessage()方法，向 Worker 发消息。
+> 主线程调用worker.onstMessage()方法，向 Worker 取消息。
+> 向 web worker 添加一个 "onmessage" 事件监听器：
+> directive deruait
+> inserted  insheta

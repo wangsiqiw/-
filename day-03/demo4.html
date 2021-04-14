@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue/vue.js"></script>
+    <style>
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input v-model="number" type="text" />
+        <input v-model="age" type="text" />
+        <button @click="fn">添加</button>
+        <p>人数{{numberage}}</p>
+        <li v-for="(item, index) in arr" :key="index">
+            <p>{{item.age}}</p>
+            <p>{{item.number}}</p>
+        </li>
+    </div>
+
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            number: "",
+            age: "",
+            arr: []
+        },
+        methods: {
+            fn() {
+                this.arr.push({
+                        name: this.number,
+                        age: this.age
+                    }),
+                    this.age = "",
+                    this.number = ""
+            }
+        },
+        computed: {
+            numberage() {
+                return this.arr.length
+            }
+        }
+    })
+</script>
+
+</html>
