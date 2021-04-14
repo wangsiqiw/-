@@ -1,4 +1,4 @@
-1.     @media screen and (max-width:900px){}
+1. @media screen and (max-width:900px){}
 1.  onlick 当点击的时候
 1.  onmouseover 鼠标移入
 1.  onmouseout 鼠标移出
